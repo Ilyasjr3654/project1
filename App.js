@@ -16,9 +16,8 @@ import HomeScreen from './src/screens/HomeScreen';
 import FieldListScreen from './src/screens/FieldListScreen';
 import FieldDetailsScreen from './src/screens/FieldDetailsScreen';
 import BookingScreen from './src/screens/BookingScreen';
-import { RootStackParamList } from './src/types';
 
-const Stack = createNativeStackNavigator<RootStackParamList>();
+const Stack = createNativeStackNavigator();
 
 function App() {
   return (

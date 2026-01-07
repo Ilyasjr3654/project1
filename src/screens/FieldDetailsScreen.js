@@ -6,26 +6,8 @@ import {
   ScrollView,
   TouchableOpacity,
 } from 'react-native';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { RouteProp } from '@react-navigation/native';
-import { RootStackParamList } from '../types';
 
-type FieldDetailsScreenNavigationProp = NativeStackNavigationProp<
-  RootStackParamList,
-  'FieldDetails'
->;
-
-type FieldDetailsScreenRouteProp = RouteProp<
-  RootStackParamList,
-  'FieldDetails'
->;
-
-interface Props {
-  navigation: FieldDetailsScreenNavigationProp;
-  route: FieldDetailsScreenRouteProp;
-}
-
-const FieldDetailsScreen: React.FC<Props> = ({ navigation, route }) => {
+const FieldDetailsScreen = ({ navigation, route }) => {
   const { field } = route.params;
 
   return (

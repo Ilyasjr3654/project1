@@ -24,12 +24,12 @@ const mockNavigation = {
 
 test('HomeScreen renders correctly', async () => {
   await ReactTestRenderer.act(() => {
-    ReactTestRenderer.create(<HomeScreen navigation={mockNavigation as any} />);
+    ReactTestRenderer.create(<HomeScreen navigation={mockNavigation} />);
   });
 });
 
 test('FieldListScreen renders correctly', async () => {
   await ReactTestRenderer.act(() => {
-    ReactTestRenderer.create(<FieldListScreen navigation={mockNavigation as any} />);
+    ReactTestRenderer.create(<FieldListScreen navigation={mockNavigation} />);
   });
 });

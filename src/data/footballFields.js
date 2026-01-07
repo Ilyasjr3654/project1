@@ -1,6 +1,4 @@
-import { FootballField } from '../types';
-
-export const footballFields: FootballField[] = [
+export const footballFields = [
   {
     id: '1',
     name: 'Terrain Champions',

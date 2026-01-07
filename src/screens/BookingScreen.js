@@ -8,30 +8,15 @@ import {
   TextInput,
   Alert,
 } from 'react-native';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { RouteProp } from '@react-navigation/native';
-import { RootStackParamList } from '../types';
 
-type BookingScreenNavigationProp = NativeStackNavigationProp<
-  RootStackParamList,
-  'Booking'
->;
-
-type BookingScreenRouteProp = RouteProp<RootStackParamList, 'Booking'>;
-
-interface Props {
-  navigation: BookingScreenNavigationProp;
-  route: BookingScreenRouteProp;
-}
-
-const BookingScreen: React.FC<Props> = ({ navigation, route }) => {
+const BookingScreen = ({ navigation, route }) => {
   const { field } = route.params;
   const [selectedDate, setSelectedDate] = useState('');
   const [selectedSlot, setSelectedSlot] = useState('');
   const [userName, setUserName] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
 
-  const validatePhoneNumber = (phone: string): boolean => {
+  const validatePhoneNumber = (phone) => {
     // Moroccan phone numbers: 10 digits starting with 0 (e.g., 0612345678)
     const phoneRegex = /^0[5-7][0-9]{8}$/;
     return phoneRegex.test(phone.replace(/\s/g, ''));

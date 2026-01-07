@@ -7,22 +7,11 @@ import {
   TouchableOpacity,
   TextInput,
 } from 'react-native';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { RootStackParamList, FootballField } from '../types';
 import { footballFields } from '../data/footballFields';
 
-type FieldListScreenNavigationProp = NativeStackNavigationProp<
-  RootStackParamList,
-  'FieldList'
->;
-
-interface Props {
-  navigation: FieldListScreenNavigationProp;
-}
-
-const FieldListScreen: React.FC<Props> = ({ navigation }) => {
+const FieldListScreen = ({ navigation }) => {
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedSize, setSelectedSize] = useState<string | null>(null);
+  const [selectedSize, setSelectedSize] = useState(null);
 
   const filteredFields = footballFields.filter(field => {
     const matchesSearch =
@@ -32,7 +21,7 @@ const FieldListScreen: React.FC<Props> = ({ navigation }) => {
     return matchesSearch && matchesSize;
   });
 
-  const renderField = ({ item }: { item: FootballField }) => (
+  const renderField = ({ item }) => (
     <TouchableOpacity
       style={styles.fieldCard}
       onPress={() => navigation.navigate('FieldDetails', { field: item })}>
