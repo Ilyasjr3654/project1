@@ -1,4 +1,32 @@
 {
-  "name": "FootballFieldRental",
-  "displayName": "FootballFieldRental"
+  "expo": {
+    "name": "FootballFieldRental",
+    "slug": "football-field-rental",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#2e7d32"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.footballfieldrental.app"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#2e7d32"
+      },
+      "package": "com.footballfieldrental"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  }
 }

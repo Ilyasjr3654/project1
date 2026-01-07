@@ -48,29 +48,53 @@ L'application propose actuellement 6 terrains dans différentes villes du Maroc 
 ## Technologies utilisées
 
 - **React Native** - Framework mobile
-- **TypeScript** - Typage statique
+- **Expo** - Plateforme de développement React Native
+- **JavaScript** - Langage de programmation
 - **React Navigation** - Navigation entre écrans
 - **React Native Gesture Handler** - Gestion des gestes
 - **React Native Safe Area Context** - Gestion des zones sécurisées
 
-## Installation
+## Installation et Exécution
+
+### Prérequis
+- Node.js (version 20 ou supérieure)
+- Expo Go app sur votre téléphone ([Android](https://play.google.com/store/apps/details?id=host.exp.exponent) / [iOS](https://apps.apple.com/app/expo-go/id982107779))
+
+### Démarrage rapide
 
 ```bash
 # Installer les dépendances
-npm install
+npm install --legacy-peer-deps
 
-# Pour iOS (macOS uniquement)
-cd ios && pod install && cd ..
-
-# Lancer l'application
+# Lancer le serveur de développement Expo
 npm start
 
-# Sur Android
+# Ou directement sur Android
 npm run android
 
-# Sur iOS
+# Ou directement sur iOS
 npm run ios
+
+# Ou sur le web
+npm run web
 ```
+
+### Utiliser avec Expo Go
+
+1. Lancez `npm start`
+2. Scannez le QR code qui apparaît avec :
+   - **Android** : L'application Expo Go
+   - **iOS** : L'application Appareil photo (qui ouvrira Expo Go)
+3. L'application se chargera sur votre téléphone !
+
+### Commandes disponibles
+
+- `npm start` - Démarre le serveur de développement Expo
+- `npm run android` - Lance sur émulateur/appareil Android
+- `npm run ios` - Lance sur simulateur/appareil iOS (macOS uniquement)
+- `npm run web` - Lance dans le navigateur web
+- `npm test` - Exécute les tests
+- `npm run lint` - Vérifie le code
 
 ## Structure du projet
 
@@ -78,23 +102,27 @@ npm run ios
 project1/
 ├── src/
 │   ├── screens/          # Écrans de l'application
-│   │   ├── HomeScreen.tsx
-│   │   ├── FieldListScreen.tsx
-│   │   ├── FieldDetailsScreen.tsx
-│   │   └── BookingScreen.tsx
-│   ├── types/            # Définitions TypeScript
-│   │   └── index.ts
+│   │   ├── HomeScreen.js
+│   │   ├── FieldListScreen.js
+│   │   ├── FieldDetailsScreen.js
+│   │   └── BookingScreen.js
 │   └── data/             # Données de l'application
-│       └── footballFields.ts
-├── android/              # Code natif Android
-├── ios/                  # Code natif iOS
-├── App.tsx              # Point d'entrée de l'application
-└── index.js             # Point d'entrée React Native
+│       └── footballFields.js
+├── assets/               # Ressources (icônes, images)
+├── App.js                # Point d'entrée de l'application
+└── app.json              # Configuration Expo
 ```
 
 ## Développement
 
-Cette application a été développée avec React Native 0.83.1 et utilise les dernières fonctionnalités du framework.
+Cette application a été développée avec Expo pour faciliter le développement et le déploiement sur iOS, Android et Web.
+
+### Pourquoi Expo ?
+
+- **Développement rapide** : Testez instantanément sur votre téléphone avec Expo Go
+- **Sans configuration native** : Pas besoin de Xcode ou Android Studio pour commencer
+- **Multi-plateforme** : Fonctionne sur iOS, Android et Web
+- **Mises à jour OTA** : Poussez des mises à jour sans passer par les app stores
 
 ### Scripts disponibles
 
