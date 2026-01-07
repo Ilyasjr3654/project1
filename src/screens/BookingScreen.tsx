@@ -31,6 +31,12 @@ const BookingScreen: React.FC<Props> = ({ navigation, route }) => {
   const [userName, setUserName] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
 
+  const validatePhoneNumber = (phone: string): boolean => {
+    // Moroccan phone numbers: 10 digits starting with 0 (e.g., 0612345678)
+    const phoneRegex = /^0[5-7][0-9]{8}$/;
+    return phoneRegex.test(phone.replace(/\s/g, ''));
+  };
+
   const handleBooking = () => {
     if (!selectedDate || !selectedSlot || !userName || !phoneNumber) {
       Alert.alert(
@@ -40,10 +46,10 @@ const BookingScreen: React.FC<Props> = ({ navigation, route }) => {
       return;
     }
 
-    if (phoneNumber.length < 10) {
+    if (!validatePhoneNumber(phoneNumber)) {
       Alert.alert(
         'Numéro invalide',
-        'Veuillez entrer un numéro de téléphone valide.'
+        'Veuillez entrer un numéro de téléphone marocain valide (ex: 0612345678).'
       );
       return;
     }
