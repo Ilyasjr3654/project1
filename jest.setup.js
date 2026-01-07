@@ -1,6 +1,7 @@
+/* eslint-env jest */
 // Mock react-native-gesture-handler
 jest.mock('react-native-gesture-handler', () => {
-  const View = require('react-native/Libraries/Components/View/View');
+  const { View } = require('react-native');
   return {
     Swipeable: View,
     DrawerLayout: View,
@@ -49,7 +50,7 @@ jest.mock('@react-navigation/native', () => {
 
 // Mock safe area context
 jest.mock('react-native-safe-area-context', () => ({
-  SafeAreaProvider: ({ children }: { children: React.ReactNode }) => children,
-  SafeAreaView: ({ children }: { children: React.ReactNode }) => children,
+  SafeAreaProvider: ({ children }) => children,
+  SafeAreaView: ({ children }) => children,
   useSafeAreaInsets: () => ({ top: 0, right: 0, bottom: 0, left: 0 }),
 }));
